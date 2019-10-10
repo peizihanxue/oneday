@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <zujian>
+            <div>
+                {{message}}
+            </div>
+        </zujian>
+    </div>
+    <template id="box">
+        <div>
+            <h1>开始</h1>
+            <!-- 插槽 -->
+            <slot></slot>
+            <h3>结束</h3>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                message: "世界再大总会有牵挂",
+            },
+            components:{
+                "zujian":{
+                    template:"#box"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
